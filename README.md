@@ -1,5 +1,11 @@
 # A Common Pitfall of Margin-based Language Model Alignment: Gradient Entanglement
 
+## Requirements
+
+```
+trl=0.11.0
+```
+
 ## Dataset
 
 The Sentiment Analysis dataset can be downloaded from [here](https://oregonstate.box.com/s/jugqojqhpifsev9usktq32elomijfgzf).

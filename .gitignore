@@ -1,0 +1,10 @@
+/sft-weights
+/wandb
+/.idea
+/outputs
+.ipynb_checkpoints
+__pycache__
+/tmp
+/plots
+lets-plot-images
+data

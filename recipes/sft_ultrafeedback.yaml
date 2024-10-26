@@ -1,0 +1,30 @@
+dataset_name: HuggingFaceH4/ultrafeedback_binarized
+model_name_or_path: meta-llama/Meta-Llama-3.1-8B-Instruct
+dataset_train_split: train_sft
+dataset_test_split: test_sft
+dataset_text_field: text
+per_device_train_batch_size: 2
+per_device_eval_batch_size: 4
+gradient_accumulation_steps: 4
+num_train_epochs: 1
+logging_steps: 10
+eval_strategy: steps
+eval_steps: 100
+save_strategy: steps
+save_steps: 400
+run_name: l31-8b-ultrafeedback-sft
+output_dir: outputs/l31-8b-ultrafeedback-sft
+warmup_ratio: 0.1
+remove_unused_columns: True
+report_to: wandb
+bf16: True
+dataset_num_proc: 32
+packing: False
+use_peft: True
+lora_r: 64
+lora_alpha: 128
+lora_dropout: 0.05
+lora_target_modules:
+  - q_proj
+  - k_proj
+  - v_proj

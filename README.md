@@ -2,7 +2,7 @@
 
 ## Dataset
 
-The Sentiment Analysis dataset can be downloded from [here](https://oregonstate.box.com/s/jugqojqhpifsev9usktq32elomijfgzf).
+The Sentiment Analysis dataset can be downloaded from [here](https://oregonstate.box.com/s/jugqojqhpifsev9usktq32elomijfgzf).
 It contains three different datasets: `long-suffix`, `short-suffix`, and `1t`.
 It should be extracted to `data/senti_data/`.
 
@@ -12,7 +12,7 @@ The TLDR dataset is loaded from huggingface datasets. The dataset can be found [
 
 The scripts to run preference optimization on the TLDR task with Meta-Llama-3-8B-Instruct on different loss types.
 
-Use `export WANDB_PROJECT=YOUR_PROJECT_NAME` to set your wandb project name.`
+Use `export WANDB_PROJECT=YOUR_PROJECT_NAME` to set your Wandb project name.`
 
 ```shell
 for loss_type in sigmoid ipo
@@ -54,7 +54,7 @@ The scripts to run preference optimization on the sentiment task with GPT-2 on d
 
 ```shell
 # Run SFT on sentiment datasets
-for ds in long-suffix-only short-suffix-only 1t # long-suffix short-suffix 1t
+for ds in long-suffix-only short-suffix-only 1t
 do
   exp_name="g2-sent-${ds}-sft"
   python sft.py recipes/sft_sentiment.yaml \
@@ -64,7 +64,7 @@ do
 done
 
 # Run DPO on sentiment datasets
-for ds in long-suffix-only short-suffix-only 1t # long-suffix short-suffix 1t
+for ds in long-suffix-only short-suffix-only 1t
 do
 for loss_type in sigmoid
 do
@@ -105,7 +105,9 @@ done
 
 ### Token-level Gradient Heatmap
 
-The following script will compute token-level gradient heatmaps and save results in `.npy` files.
+This script computes token-level gradient heatmaps and saves results in `cosine_sim_matrix.npy` files.
+The corresponding token is saved in `_metadata.json` files for further plot.
+It only evaluates the heatmap for 5 samples.
     
 ```shell
 for ds in long-suffix # long-suffix-only short-suffix-only 1t

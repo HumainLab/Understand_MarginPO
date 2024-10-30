@@ -1,5 +1,6 @@
 from typing import Dict, Union, List, Literal, Tuple
 import torch
+import torch.nn.functional as F
 from trl.commands.cli_utils import DPOScriptArguments
 from utils.configs import H4ArgumentParser
 from dpo import training_prepare

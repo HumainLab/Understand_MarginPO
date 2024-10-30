@@ -5,6 +5,7 @@ from trl.commands.cli_utils import DPOScriptArguments
 from utils.configs import H4ArgumentParser
 from accelerate import Accelerator
 import torch
+import torch.nn.functional as F
 from datasets import load_dataset, load_from_disk
 from transformers import AutoModelForCausalLM, AutoTokenizer
 from accelerate import PartialState

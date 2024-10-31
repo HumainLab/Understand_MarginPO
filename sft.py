@@ -76,7 +76,7 @@ if __name__ == "__main__":
         eval_dataset=dataset[args.dataset_test_split],
         tokenizer=tokenizer,
         peft_config=get_peft_config(model_config),
-        formatting_func=formatting_prompts_func if training_args.dataset_text_field is None else None,
+        formatting_func=formatting_prompts_func if training_args.dataset_text_field == "None" else None,
     )
 
     trainer.train()
